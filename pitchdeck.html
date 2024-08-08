@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pitch Deck</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<style>
+    body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.pitch-deck {
+    width: 80%;
+    max-width: 800px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.slide {
+    display: none;
+    padding: 20px;
+    text-align: center;
+}
+
+.slide h1 {
+    margin-bottom: 20px;
+}
+
+.slide p {
+    font-size: 1.2em;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+}
+
+.navigation button {
+    background-color: #0056b3;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.navigation button:hover {
+    background-color: #003d82;
+}
+
+</style>
+
+<body>
+    <div class="pitch-deck">
+        <div class="slide" id="slide1">
+           
+           <h1>Pitch-deck</h1>
+          <h2>Zohaib Raza</h2>
+          <h2>321-33066</h2>
+
+
+        </div>
+        <div class="slide" id="slide2">
+            <h1>Welcome to Our TechTrove</h1>
+            <p>TechTrove is a specialized e-commerce platform that offers the latest gadgets and technology products, catering to tech enthusiasts and professionals.</p>
+        </div>
+        <div class="slide" id="slide3">
+            <h1>Problem </h1>
+            <h3> Overwhelming Tech Choices</h3>
+            <p> Consumers often feel overwhelmed by the vast number of tech products available and struggle to find reliable information to make informed purchasing decisions.</p>
+        </div>
+        <div class="slide" id="slide4">
+            <h1>Our Solution</h1>
+            <h3>Curated Tech Selections</h3>
+            <p>TechTrove simplifies the shopping experience by offering curated selections of the best tech products, accompanied by expert reviews and buying guides.</p>
+        </div>
+        <div class="slide" id="slide5">
+            <h1>Market Opportunity</h1>
+            <h3>Booming Tech Industry</h3>
+            <p> The global consumer electronics market is expected to reach $1.5 trillion by 2024, driven by rapid advancements in technology and increasing consumer demand.</p>
+        </div>
+        <div class="slide" id="slide6">
+            <h1> Product</h1>
+            <h3>Expert Reviews and Guides</h3>
+            <p>TechTrove features detailed product reviews and buying guides from tech experts, helping consumers make informed decisions and find the best products for their needs.</p>
+        </div>
+        <div class="slide" id="slide7">
+            <h1>Team</h1>
+            <h3>Tech Enthusiasts and Experts</h3>
+            <p>Our team comprises tech enthusiasts, product reviewers, and developers who are passionate about the latest technology trends and innovations. </p>
+        </div>
+        <div class="slide" id="slide8">
+            <h1>Competition</h1>
+            <h3>Quality Over Quantity</h3>
+            <p>TechTrove differentiates itself by focusing on quality over quantity, offering only the best-reviewed and most reliable tech products in each category. </p>
+        </div>
+        <div class="slide" id="slide9">
+            <h1>Financials</h1>
+            <h3>Scalable Business Model</h3>
+            <p> TechTrove projects rapid growth with a scalable business model, leveraging affiliate marketing, sponsored content, and strategic partnerships for revenue. </p>
+        </div>
+        
+        
+        <div class="slide" id="slide10">
+            <h1>Contact Us</h1>
+            <p>Email:  TechTrove@gmail.com</p>
+        </div>
+        <div class="slide" id="slide10">
+            <h1>THANKU</h1>
+            
+        </div>
+        <div class="navigation">
+            <button onclick="prevSlide()">Previous</button>
+            <button onclick="nextSlide()">Next</button>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
+
+<script>
+    let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+
+function showSlide(index) {
+    slides.forEach((slide, i) => {
+        slide.style.display = (i === index) ? 'block' : 'none';
+    });
+}
+
+function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+}
+
+function prevSlide() {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    showSlide(currentSlide);
+});
+
+</script>
